@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -22,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'psuxlc^=cyowa^2aw&)wju!lh4=41$1s%cv-hes8ft5_o7=f%c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -82,7 +83,7 @@ WSGI_APPLICATION = 'learning_log.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR,  'db.sqlite3'),
     }
 }
 
@@ -128,7 +129,7 @@ STATIC_URL = '/static/'
 # 我的设置
 LOGIN_URL = '/users/login/'
 
-# djang-bootstraps3的设置
+# django-bootstraps3的设置
 BOOTSTRAP3 = {
     'include_jquery': True,
 }
@@ -141,7 +142,7 @@ if os.getcwd() == '/app':
     }
 
     # 让request.is_secure()承认X-Forwarded_Proto头
-    SECURE_PROXY_SSL_HEADER = ('HTTP_XFOREARDED_PROTO', 'https')
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
     # 支持所有的主机头（host header）
     ALLOWED_HOSTS = ['*']
