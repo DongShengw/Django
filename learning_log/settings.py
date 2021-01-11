@@ -25,7 +25,7 @@ SECRET_KEY = 'psuxlc^=cyowa^2aw&)wju!lh4=41$1s%cv-hes8ft5_o7=f%c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -145,7 +145,7 @@ if os.getcwd() == '/app':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
     # 只允许Heroku托管这个项目
-    ALLOWED_HOSTS = ['learning-log.herokuapp.com']
+    ALLOWED_HOSTS = ['wsd-wsd.herokuapp.com']
 
     DEBUG = False
 
