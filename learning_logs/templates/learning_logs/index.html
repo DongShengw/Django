@@ -2,17 +2,19 @@
 
 {% block header %}
     <div class="jumbotron">
-        <h1>Track your learning.</h1>
+        <h1 class="text-center" color="#EBC79E">学习笔记</h1>
+    <img src="https://cdn.pixabay.com/photo/2016/11/19/16/48/notebook-1840276_1280.jpg" class="rounded float-end" height="550px" width="1000px"/>
     </div>
 {% endblock header%}
 
 {% block content %}
     <h2>
        <a href="{% url 'users:register' %}">Register an account</a> to make
-       your own Leaening Log, and list the topics you're learning about.
+       your own Learning Log, and list the topics you're learning about.
     </h2>
     <h2>
         Whenever you learn something new about a topic, make an entry
         summarizing what you're learned.
     </h2>
+    <div style=" height:300px " ></div>
 {% endblock content %}
